@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sette e Mezzo | Stardust Palace</title>
+    <link rel="stylesheet" href="CSS/styleSetteMezzo.css">
+    <script src="JS/sette-mezzo.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="titulo">Stardust Palace</h1>
+            </div>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><u>SETTE E MEZZO</u></li>
+                <li><a href="regras.html" target="_blank">REGRAS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="cover">
+            <h1 class="titulo">Sette e Mezzo</h1>
+            <div class="container">
+                <div class="conteudo">
+                    <div class="placar" id="placarJogador">
+                        <h2>Jogador</h2>
+                    </div>
+
+                    <div class="mesa">
+                        <div class="jogo">
+                            <h2>Banca</h2>
+                            <div class="div_cartas">
+                                <div class="cartas" id="cartasBanca"></div>
+                                <div class="marca">
+                                    <h1 class="titulo">Stardust Palace</h1>
+                                    <h1>Sette e Mezzo</h1>
+                                    <h4>A Banca deve ultrapassar o Jogador</h4>
+                                </div>
+                                <div class="cartas" id="cartasJogador"></div>
+                            </div>
+                            <h2>Jogador</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="placar" id="placarBanca">
+                        <h2>Banca</h2>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button" id="buttonPedir" onclick="Pedir()">Pedir Carta</button>
+                    <button class="button" id="buttonPassar" disabled onclick="Passar()">Passar a Vez</button>
+                </div>
+            </div>
+        </div>
+        <div class="resultado" id="div_resultado">
+            <h1 class="titulo">Resultado</h1>
+            <h2 id="resultado"></h2>
+            <h4 id="resultadoDesc"></h4>
+            <button class="button" onclick="location.reload()">Tentar Novamente</button>
+        </div>
+    </main>
+
+    <!-- <h1>Sete e Meio</h1>
+
+    <button id="buttonPedir" onclick="Pedir()">Pedir Carta</button>
+    <button id="buttonPassar" disabled onclick="Passar()">Passar a Vez</button><br><br>
+
+    <div id="div_jogador" style="display: none;">Jogador:</div><br>
+    <div id="div_banca" style="display: none;">Banca:</div><br>
+    <div id="div_resultado" style="display: none;"></div><br> -->
+</body>
+
+</html>

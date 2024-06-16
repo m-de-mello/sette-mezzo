@@ -4,190 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sete e Meio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home | Stardust Palace</title>
+    <link rel="stylesheet" href="CSS/styleIndex.css">
+    <link rel="stylesheet" href="CSS/styleNavbar.css">
 </head>
 
 <body>
-    <h1>Sete e Meio</h1>
+    <!-- NAVBAR -->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="titulo">Stardust Palace</h1>
+            </div>
+            <ul class="navbar" id="navbar">
+                <li><u>HOME</u></li>
+                <li><a href="sette-mezzo.html">SETTE E MEZZO</a></li>
+                <li><a href="regras.html" target="_blank">REGRAS</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <button id="buttonPedir" onclick="Pedir()">Pedir Carta</button>
-    <button id="buttonPassar" disabled onclick="Passar()">Passar a Vez</button><br><br>
-
-    <div id="div_jogador" style="display: none;">Jogador:</div><br>
-    <div id="div_banca" style="display: none;">Banca:</div><br>
-    <div id="div_resultado" style="display: none;"></div><br>
+    <main>
+        <div class="cover">
+            <div class="container">
+                <div class="conteudo">
+                    <h1>Bem Vindo ao</h1>
+                    <img src="CSS/IMG/StardustPalace.png">
+                    <h4>Clique no Botão abaixo para Jogar Sette e Mezzo</h4>
+                    <div class="buttons">
+                        <button id="Sette_Mezzo" onclick="window.location.href = 'sette-mezzo.html'">Sette e
+                            Mezzo</button>
+                        <button id="Regras" onclick="window.location.href = 'regras.html'">Regras</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
-
-<script>
-    const baralho = [
-        cartaAs = {
-            nome: "Ás de",
-            valor: 1,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta2 = {
-            nome: "2 de",
-            valor: 2,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta3 = {
-            nome: "3 de",
-            valor: 3,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta4 = {
-            nome: "4 de",
-            valor: 4,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta5 = {
-            nome: "5 de",
-            valor: 5,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta6 = {
-            nome: "6 de",
-            valor: 6,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        carta7 = {
-            nome: "7 de",
-            valor: 7,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        cartaValete = {
-            nome: "Valete de",
-            valor: 0.5,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        cartaRainha = {
-            nome: "Rainha de",
-            valor: 0.5,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-
-        cartaRei = {
-            nome: "Rei de",
-            valor: 0.5,
-            naipe: ['Copas', 'Espadas', 'Ouros', 'Paus']
-        },
-    ]
-
-    const cartasSelecionadas = [];
-
-    let totalJogador = 0;
-    let totalBanca = 0;
-
-    function Pedir() {
-        div_jogador.style.display = 'block';
-        buttonPassar.disabled = false;
-
-        let aleatorioCarta = (Math.random() * 9).toFixed();
-        let aleatorioNaipe = (Math.random() * 3).toFixed();
-        let cartaAtual = baralho[aleatorioCarta];
-
-        if (cartasSelecionadas.indexOf(`${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}`) >= 0)
-            Pedir();
-        else {
-            totalJogador += cartaAtual.valor
-
-            cartasSelecionadas.push(`${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}`);
-        }
-
-
-        div_jogador.innerHTML += `
-        <br>(${totalJogador} pontos) ${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}
-        `;
-
-        if (totalJogador == 7.5) {
-            div_jogador.innerHTML += `
-            <br>SETE E MEIO!`;
-
-            div_banca.style.display = 'block';
-            div_resultado.style.display = 'block';
-
-            div_resultado.innerHTML += `
-            O Jogador venceu com ${totalJogador} pontos!`;
-
-            buttonPedir.disabled = true;
-            buttonPassar.disabled = true;
-        }
-
-        else if (totalJogador > 7.5) {
-            div_jogador.innerHTML += `
-            <br>O JOGADOR ESTOUROU!`;
-
-            div_banca.style.display = 'block';
-            div_resultado.style.display = 'block';
-
-            div_resultado.innerHTML += `
-            A Banca venceu com ${totalBanca} pontos!`;
-
-            buttonPedir.disabled = true;
-            buttonPassar.disabled = true;
-        }
-    }
-
-    function Passar() {
-        div_banca.style.display = 'block'
-        buttonPedir.disabled = true;
-        buttonPassar.disabled = true;
-
-        for (i = 0; totalBanca <= 15; i++) {
-            let aleatorioCarta = (Math.random() * 9).toFixed();
-            let aleatorioNaipe = (Math.random() * 3).toFixed();
-            let cartaAtual = baralho[aleatorioCarta];
-
-            if (cartasSelecionadas.indexOf(`${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}`) >= 0)
-                Passar();
-            else {
-                totalBanca += cartaAtual.valor
-
-                cartasSelecionadas.push(`${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}`);
-
-                div_banca.innerHTML += `
-            <br>(${totalBanca} pontos) ${cartaAtual.nome} ${cartaAtual.naipe[aleatorioNaipe]}
-            `;
-                console.log(cartaAtual.valor);
-
-                if (totalBanca == 7.5) {
-                    div_banca.innerHTML += `
-                <br>SETE E MEIO!`;
-
-                    div_resultado.style.display = 'block';
-                    div_resultado.innerHTML += `
-                A Banca venceu com ${totalBanca} pontos!`;
-                    break
-                }
-
-                else if (totalBanca > totalJogador && totalBanca <= 7.5) {
-                    div_resultado.style.display = 'block';
-                    div_resultado.innerHTML += `
-                A Banca venceu com ${totalBanca} pontos!`;
-                    break
-                }
-
-                else if (totalBanca > 7.5) {
-                    div_banca.innerHTML += `
-                <br>A BANCA ESTOUROU!`;
-
-                    div_resultado.style.display = 'block';
-                    div_resultado.innerHTML += `
-                O Jogador venceu com ${totalJogador} pontos!`;
-                    break
-                }
-            }
-        }
-    }
-</script>

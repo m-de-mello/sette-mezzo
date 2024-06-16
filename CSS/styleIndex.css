@@ -1,0 +1,143 @@
+@import url(FONTS/fonts.css);
+
+body {
+    background-image: url(IMG/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid #FDA700;
+    border-radius: 15px;
+    background-color: #00000080;
+}
+
+.conteudo h1,
+.conteudo h4 {
+    color: #FFF;
+}
+
+.conteudo h4 {
+    margin-top: 50px;
+}
+
+.conteudo img {
+    width: 80%;
+}
+
+.buttons {
+    width: 320px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons button {
+    height: 40px;
+    padding: 0 10px;
+    font-family: Made-Tommy;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.buttons #Sette_Mezzo {
+    width: 180px;
+    background-color: #FDA700;
+    color: #000;
+    border: none;
+}
+
+.buttons #Regras {
+    width: 100px;
+    background-color: transparent;
+    color: #FDA700;
+    border: 2px solid #FDA700;
+}
+
+.buttons #Sette_Mezzo:hover,
+.buttons #Sette_Mezzo:focus {
+    cursor: pointer;
+    background-color: transparent;
+    color: #FDA700;
+    border: 2px solid #FDA700;
+}
+
+.buttons #Regras:hover,
+.buttons #Regras:focus {
+    cursor: pointer;
+    background-color: #FDA700;
+    color: #000;
+    border: none;
+}  
+
+/*--------------------------------------------------------------------------------- Regras ----------------------------------------------------------------------------------------*/
+
+#Regras {
+    overflow: auto;
+}
+
+#Regras main {
+    height: 1200px;
+}
+
+#Regras .conteudo {
+    color: #FFF;
+    height: 1000px;
+}
+
+#Regras .titulo {
+    color: #FDA700;
+    align-self: center;
+}
+
+#Regras .conteudo p, 
+#Regras .conteudo li {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#Regras .conteudo p {
+    width: 80%;
+    text-align: justify;
+}
+
+#Regras .conteudo ul {
+    margin: 0;
+}
+
+#Regras .conteudo li {
+    margin: 10px 0;
+    width: 750px;
+}
+
+#Regras .conteudo b {
+    color: #FDA700;
+}
+
+#Regras .buttons {
+    width: fit-content;
+    margin-bottom: 40px;
+}
+

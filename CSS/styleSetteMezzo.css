@@ -1,0 +1,210 @@
+@import url(styleNavbar.css);
+
+body {
+    background-image: url(IMG/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container {
+    width: 95%;
+    height: 100%;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+main .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cover .titulo {
+    margin: 20px 0 0 0;
+    font-size: 48px;
+}
+
+.conteudo {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.placar,
+.jogo {
+    border: 2px solid #FDA700;
+    border-radius: 15px;
+    background-color: #00000080;
+}
+
+.placar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.placar h2,
+.placar h3 {
+    margin: 10px 0 0 0;
+    color: #FDA700;
+}
+
+.placar span {
+    color: #FFF;
+    margin-top: 15px;
+}
+
+.mesa {
+    width: 50%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid #582f0e;
+    border-radius: 30px;
+}
+
+.jogo {
+    width: 99%;
+    height: 97%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 10px solid wheat;
+    background-color: #054A29;
+}
+
+.jogo .cartas {
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jogo .marca {
+    width: 70%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marca h1 {
+    margin: 0;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.marca .titulo {
+    color: #FDA700;
+}
+
+.marca h4 {
+    margin: 0;
+    color: #999999;
+}
+
+.jogo h2 {
+    color: #FFF;
+}
+
+.div_cartas {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cartas img {
+    width: 150 px;
+    height: 120px;
+    margin: 0px 10px;
+}
+
+#cartasBanca img {
+    transform: rotate(180deg)
+}
+
+.buttons {
+    width: 420px;
+    height: 40px;
+    margin-top: 50px;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.button {
+    width: 180px;
+    padding: 0 10px;
+    color: #000;
+    font-family: Made-Tommy;
+    font-size: 20px;
+    background-color: #FDA700;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.button:enabled:hover,
+.button:enabled:focus {
+    cursor: pointer;
+    background-color: transparent;
+    color: #FDA700;
+    border: 2px solid #FDA700;
+}
+
+.resultado {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+
+    width: 600px;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #FDA700;
+    border-radius: 15px;
+    background-color: #000;
+}
+
+.button:disabled {
+    background-color: #533800;
+}
+
+.resultado .titulo {
+    font-size: 40px;
+}
+
+.resultado h2,
+.resultado h4 {
+    color: #FFF;
+}
+
+.resultado .button {
+    margin-top: 50px;
+    width: 200px;
+    height: 40px;
+}
+
+b {
+    color: #FDA700;
+}
